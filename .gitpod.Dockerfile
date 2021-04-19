@@ -11,5 +11,8 @@ RUN zsh -c "conda init zsh"
 
 RUN conda config --add channels conda-forge
 RUN conda config --add channels pytorch
+RUN conda config --add channels intel
+
+RUN conda config --set channel_priority strict
 
 RUN conda update -y --all
