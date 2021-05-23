@@ -16,4 +16,4 @@ RUN zsh -c "conda init zsh"
 
 # RUN conda config --set channel_priority strict
 
-RUN conda update -y --all
+RUN sudo conda update -y --all
