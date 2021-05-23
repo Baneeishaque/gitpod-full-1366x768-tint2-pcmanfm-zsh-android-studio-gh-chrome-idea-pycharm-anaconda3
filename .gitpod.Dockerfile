@@ -16,4 +16,5 @@ RUN zsh -c "conda init zsh"
 
 # RUN conda config --set channel_priority strict
 
-RUN sudo conda update -y --all
+USER gitpod
+RUN conda update -y --all
