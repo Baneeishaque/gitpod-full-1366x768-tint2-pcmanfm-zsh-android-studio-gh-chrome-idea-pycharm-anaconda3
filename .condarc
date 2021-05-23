@@ -1,0 +1,6 @@
+pkgs_dirs:
+  - /workspace/.conda/pkgs
+envs_dirs:
+  - /workspace/.conda/envs
+# help debug channel issues
+show_channel_urls: True
