@@ -2,13 +2,16 @@ FROM baneeishaque/gitpod-workspace-full-vnc-1366x768-tint2-pcmanfm-zsh-android-s
 
 ENV GIT_INTERNAL_GETTEXT_TEST_FALLBACKS=1
 
-COPY .condarc /home/gitpod/
-
 RUN pyenv install anaconda3-2020.11 \
  && pyenv global anaconda3-2020.11
 
 RUN bash -c "conda init bash"
 RUN zsh -c "conda init zsh"
+
+RUN conda config --add pkgs_dirs /workspace/.conda/pkgs
+RUN conda config --add envs_dirs /workspace/.conda/envs
+
+RUN conda config --set show_channel_urls True
 
 # RUN conda config --add channels conda-forge
 # RUN conda config --add channels pytorch
@@ -16,5 +19,6 @@ RUN zsh -c "conda init zsh"
 
 # RUN conda config --set channel_priority strict
 
-USER gitpod
-RUN conda update -y --all
+RUN sudo mkdir -p /workspace/.conda \
+ && sudo chown -R gitpod /workspace/.conda \
+ && conda update -y --all
