@@ -12,20 +12,9 @@
 
 [![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/Baneeishaque/gitpod-full-1366x768-tint2-pcmanfm-zsh-android-studio-gh-chrome-idea-pycharm-anaconda3-2020-11)
 
-## Tint 2 : 16.7
-## PCMan File Manager : 1.3.1
+### Base Image : [baneeishaque/gitpod-workspace-full-vnc-1366x768-tint2-pcmanfm-zsh-android-studio-gh-chrome--intellij-idea-pycharm](https://hub.docker.com/repository/docker/baneeishaque/gitpod-workspace-full-vnc-1366x768-tint2-pcmanfm-zsh-android-studio-gh-chrome-intellij-idea-pycharm)  
 
-## ZSH : 5.8
-### &nbsp;&nbsp;Oh My ZSH : 95a06f3
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Git
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Gradle
-
-## Android SDK : 30
-## Android Studio : 4.1.3
-## Github CLI : 1.7.0
-## Google Chrome : 89.0.4389.114
-## IntelliJ IDEA : 2021.1
-## Pycharm : 2021.1
-## Anaconda3 : 2020.11
+## Additional Tools
+### &nbsp;&nbsp; - Anaconda3 : 2020.11
 
 [//]: # "[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Baneeishaque/gitpod-full-1366x768-tint2-pcmanfm-zsh-android-studio-gh-chrome-idea-pycharm-anaconda3-2020-11)"
