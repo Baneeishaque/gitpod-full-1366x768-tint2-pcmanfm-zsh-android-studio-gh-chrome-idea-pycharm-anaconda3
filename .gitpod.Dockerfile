@@ -2,14 +2,29 @@ FROM baneeishaque/gitpod-workspace-full-vnc-1366x768-tint2-pcmanfm-zsh-android-s
 
 ENV GIT_INTERNAL_GETTEXT_TEST_FALLBACKS=1
 
-RUN pyenv install anaconda3-2020.11 \
- && pyenv global anaconda3-2020.11
+ARG anaconda3Version="2021.05"
 
-RUN bash -c "conda init bash"
-RUN zsh -c "conda init zsh"
+RUN sudo mkdir -p /workspace/.conda \
+ && sudo chown -R gitpod /workspace/.conda \
+ && ln -s /workspace/.conda/pkgs /home/gitpod/.pyenv/versions/anaconda3-${anaconda3Version}/pkgs \
+ && ln -s /workspace/.conda/envs /home/gitpod/.pyenv/versions/anaconda3-${anaconda3Version}/envs 
 
-RUN conda config --add pkgs_dirs /workspace/.conda/pkgs
-RUN conda config --add envs_dirs /workspace/.conda/envs
+RUN pyenv update \
+ && pyenv install anaconda3-${anaconda3Version}\
+ && pyenv global anaconda3-${anaconda3Version}
+
+# RUN sudo mkdir -p /workspace/.conda \
+#  && sudo chown -R gitpod /workspace/.conda \
+#  && mv /home/gitpod/.pyenv/versions/anaconda3-${anaconda3Version}/pkgs /workspace/.conda/ \
+#  && mv /home/gitpod/.pyenv/versions/anaconda3-${anaconda3Version}/envs /workspace/.conda/ \
+#  && ln -s /workspace/.conda/pkgs /home/gitpod/.pyenv/versions/anaconda3-${anaconda3Version}/pkgs \
+#  && ln -s /workspace/.conda/envs /home/gitpod/.pyenv/versions/anaconda3-${anaconda3Version}/envs 
+
+# disable init of conda env. "base"
+# RUN conda config --set auto_activate_base false
+
+# RUN conda config --add pkgs_dirs /workspace/.conda/pkgs
+# RUN conda config --add envs_dirs /workspace/.conda/envs
 
 RUN conda config --set show_channel_urls True
 
@@ -19,6 +34,7 @@ RUN conda config --set show_channel_urls True
 
 # RUN conda config --set channel_priority strict
 
-RUN sudo mkdir -p /workspace/.conda \
- && sudo chown -R gitpod /workspace/.conda \
- && conda update -y --all
+RUN bash -c "conda init bash"
+RUN zsh -c "conda init zsh"
+
+# RUN conda update -y --all

@@ -34,7 +34,7 @@
             }
         },
         {
-            "label": "Run Gitpod Docker Image",
+            "label": "Run ZSH on Gitpod Docker Image",
             "type": "shell",
             "command": "docker",
             "isBackground": false,
@@ -46,6 +46,44 @@
                 "-it",
                 "--entrypoint",
                 "/usr/bin/zsh",
+                "baneeishaque/${workspaceFolderBasename}:latest"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "echo": true,
+                "focus": true,
+                "panel": "shared",
+                "group": "Docker",
+                "revealProblems": "onProblem",
+                "clear": false,
+                "showReuseMessage": false
+            },
+            "runOptions": {
+                "reevaluateOnRerun": true,
+                "runOn": "default"
+            },
+            "dependsOn": [
+                "Build Gitpod Docker Image"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Bash on Gitpod Docker Image",
+            "type": "shell",
+            "command": "docker",
+            "isBackground": false,
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "args": [
+                "run",
+                "-it",
+                "--entrypoint",
+                "/bin/bash",
                 "baneeishaque/${workspaceFolderBasename}:latest"
             ],
             "group": {
