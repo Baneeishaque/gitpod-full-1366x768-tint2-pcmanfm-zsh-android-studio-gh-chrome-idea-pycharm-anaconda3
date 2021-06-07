@@ -8,13 +8,11 @@ RUN pyenv update \
  && pyenv install anaconda3-${anaconda3Version}\
  && pyenv global anaconda3-${anaconda3Version}
 
-RUN la /home/gitpod/.pyenv/versions/anaconda3-${anaconda3Version}/envs
+RUN ls /home/gitpod/.pyenv/versions/anaconda3-${anaconda3Version}/envs
 
 RUN sudo mkdir -p /workspace/.conda \
  && sudo chown -R gitpod /workspace/.conda \
-#  && mv /home/gitpod/.pyenv/versions/anaconda3-${anaconda3Version}/pkgs /workspace/.conda/ \
  && mv /home/gitpod/.pyenv/versions/anaconda3-${anaconda3Version}/envs /workspace/.conda/ \
-#  && ln -s /workspace/.conda/pkgs /home/gitpod/.pyenv/versions/anaconda3-${anaconda3Version}/pkgs \
  && ln -s /workspace/.conda/envs /home/gitpod/.pyenv/versions/anaconda3-${anaconda3Version}/envs 
 
 # disable init of conda env. "base"
@@ -34,6 +32,4 @@ RUN conda config --set show_channel_urls True
 RUN bash -c "conda init bash"
 RUN zsh -c "conda init zsh"
 
-# RUN sudo mkdir -p /workspace/.conda \
-#  && sudo chown -R gitpod /workspace/.conda \
-#  && conda update -y --all
+RUN conda update -y --all
