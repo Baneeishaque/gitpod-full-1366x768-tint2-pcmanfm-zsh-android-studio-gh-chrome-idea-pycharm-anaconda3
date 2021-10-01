@@ -13,7 +13,7 @@ RUN ls /home/gitpod/.pyenv/versions/anaconda3-${anaconda3Version}/envs
 RUN sudo mkdir -p /workspace/.conda \
  && sudo chown -R gitpod /workspace/.conda \
  && mv /home/gitpod/.pyenv/versions/anaconda3-${anaconda3Version}/envs /workspace/.conda/ \
- && ln -s /workspace/.conda/envs /home/gitpod/.pyenv/versions/anaconda3-${anaconda3Version}/envs 
+ && ln -s /workspace/.conda/envs /home/gitpod/.pyenv/versions/anaconda3-${anaconda3Version}/envs
 
 # disable init of conda env. "base"
 # RUN conda config --set auto_activate_base false
@@ -22,12 +22,6 @@ RUN sudo mkdir -p /workspace/.conda \
 # RUN conda config --add envs_dirs /workspace/.conda/envs
 
 RUN conda config --set show_channel_urls True
-
-# RUN conda config --add channels conda-forge
-# RUN conda config --add channels pytorch
-# RUN conda config --add channels intel
-
-# RUN conda config --set channel_priority strict
 
 RUN bash -c "conda init bash"
 RUN zsh -c "conda init zsh"
