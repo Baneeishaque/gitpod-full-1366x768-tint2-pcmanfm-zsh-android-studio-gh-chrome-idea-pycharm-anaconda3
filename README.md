@@ -15,6 +15,6 @@
 ### Base Image : [baneeishaque/gitpod-workspace-full-vnc-1366x768-tint2-pcmanfm-zsh-android-studio-gh-chrome-intellij-idea-pycharm](https://hub.docker.com/repository/docker/baneeishaque/gitpod-workspace-full-vnc-1366x768-tint2-pcmanfm-zsh-android-studio-gh-chrome-intellij-idea-pycharm)
 
 ## Additional Tools
-### &nbsp;&nbsp; - Anaconda3 : 2021.05
+### &nbsp;&nbsp; - Anaconda3 : 2021.11
 
 [//]: # "[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Baneeishaque/gitpod-full-1366x768-tint2-pcmanfm-zsh-android-studio-gh-chrome-idea-pycharm-anaconda3)"

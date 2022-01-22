@@ -2,7 +2,7 @@ FROM baneeishaque/gitpod-workspace-full-vnc-1366x768-tint2-pcmanfm-zsh-android-s
 
 ENV GIT_INTERNAL_GETTEXT_TEST_FALLBACKS=1
 
-ARG anaconda3Version="2021.05"
+ARG anaconda3Version="2021.11"
 
 RUN pyenv update \
  && pyenv install anaconda3-${anaconda3Version}\
